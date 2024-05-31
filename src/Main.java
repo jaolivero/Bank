@@ -1,9 +1,7 @@
+import Accounts.Account;
+import Accounts.CheckingAccount;
 import People.Customer.Customer;
-import People.Employee.Employee;
 import People.Employee.Teller;
-import People.Person;
-
-import java.util.Arrays;
 
 public class Main {
 
@@ -15,8 +13,9 @@ public class Main {
 
         Branch branch = new Branch ("127 atwood ave", 10000);
 
-        Teller elijah = new Teller("Elijah", "Olivero");
-        Teller joel = new Teller("Joel", "Olivero");
+
+        Teller elijah = new Teller("Elijah", "Olivero", "jooliv@boa.com");
+        Teller joel = new Teller("Joel", "Olivero", "elioliv@boa.com");
 
         Customer tazz = new Customer();
 
@@ -26,9 +25,23 @@ public class Main {
         System.out.println("Joel's Employee ID is " + joel.getId());
 
 
-        System.out.println(bank.getEmployees() + " all Employees");
+        Account checkings = new CheckingAccount(223949444, tazz);
 
-      //  System.out.println(tazz.toString());
+        tazz.addAccount(checkings);
+
+       checkings.deposit(-1000);
+
+       //checkings.withdraw(-5000);
+
+        System.out.println(tazz.getAccounts());
+
+
+        //tazz.removeAccount(checkings);
+
+
+        System.out.println(tazz.getAccounts());
+
+
 
 
 

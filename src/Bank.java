@@ -61,23 +61,24 @@ public class Bank {
         }
     }
 
-//    public void getBankInfo(String bankName) {
-//        String url = "https://api.apilayer.com/bank_data/check_blz_code?blz_code=blz_code";
-//        //Api info to assure Bank info is simple and up to date
-//        HttpClient httpClient = HttpClient.newHttpClient();
-//        HttpRequest request = HttpRequest.newBuilder(
-//                URI.create(url)).GET().build();
-//
-//        try {
-//            HttpResponse<InputStream> response = httpClient.send(request, HttpResponse.BodyHandlers.ofInputStream());
-//            int statusCode = response.statusCode();
-//            System.out.println("HTTP status: " + statusCode);
-//
-//            System.out.println(response.body());
-//        } catch (IOException | InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
+    public void getBankInfo(String bankName) {
+        String url = "https://api.apilayer.com/bank_data/check_blz_code?blz_code=blz_code";
+        //Api info to assure Bank info is simple and up to date
+        HttpClient httpClient = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder(
+                URI.create(url)).GET().build();
+
+        try {
+
+            HttpResponse<InputStream> response = httpClient.send(request, HttpResponse.BodyHandlers.ofInputStream());
+            int statusCode = response.statusCode();
+            System.out.println("HTTP status: " + statusCode);
+
+            System.out.println(response.body());
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public ArrayList<Employee> getEmployees() {
         return employees;

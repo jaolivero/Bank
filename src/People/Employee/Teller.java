@@ -1,9 +1,10 @@
 package People.Employee;
 
 import People.Customer.Customer;
-import People.Person;
 
-public class Teller extends Employee implements Person {
+public class Teller extends Employee {
+
+
     Customer customer;
 
     private double cashAvaliable = 1000;
@@ -11,15 +12,12 @@ public class Teller extends Employee implements Person {
 
 
 
+    //Admin Level -enum manager class should be the highest admin.
 
-    //Admin Level -enum manager class should be highest admin.
+    public Teller(String firstName, String lastName, String email) {
 
-    public Teller(String firstName, String lastName) {
-        super(firstName, lastName);
+        super(firstName, lastName, email);
+
+
     }
-
-
-
-
-
 }

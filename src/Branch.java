@@ -1,9 +1,7 @@
 import People.Customer.Customer;
 import People.Employee.Employee;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Optional;
+
 
 public class Branch {
     String address;

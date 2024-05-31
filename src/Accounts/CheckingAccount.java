@@ -1,4 +1,12 @@
 package Accounts;
 
-public class CheckingAccount {
+import People.Customer.Customer;
+
+public class CheckingAccount extends Account {
+
+    public CheckingAccount(int accNumber, Customer customer) {
+        super(accNumber, customer);
+    }
+
+
 }
